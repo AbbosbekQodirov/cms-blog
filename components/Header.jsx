@@ -1,12 +1,20 @@
+import { getCategories } from '../services';
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 function Header() {
 
-    const categories = [
-      { name: "Praktikum", slug: "praktikum" },
-      { name: "Projects", slug: "projects" }
-    ];
+    // const categories = [
+    //   { name: "Praktikum", slug: "praktikum" },
+    //   { name: "Projects", slug: "projects" }
+    // ];
+
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+      getCategories().then((res) => setCategories(res));
+    }, []);
+
 
   return (
     <div className="container mx-auto  px-10 mb-8">
