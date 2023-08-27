@@ -7,13 +7,14 @@ import Link from "next/link";
 function PostWidget({ categories, slug }) {
   const [relatedPosts, setRelatedPost] = useState([]);
 
+
   useEffect(() => {
     if (slug) {
       getSimilarPosts(categories, slug).then((res) => setRelatedPost(res));
     } else {
       getRecentPosts().then((res) => setRelatedPost(res));
     }
-  }, []);
+  }, [slug]);
   return (
     <div className="bg-white shadow-lg p-8 mb-8 rounded-lg">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">
