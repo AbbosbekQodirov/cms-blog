@@ -6,10 +6,6 @@ import { Categories, PostCard, PostWidget } from '@/components'
 import { getPosts } from '@/services'
 
 
-const posts = [
-  { title: "MERN Stack Praktikum", excerpt: "MongoDB, ExpressJS, ReactJS, NodeJS" },
-  { title: "Digital Marketing", excerpt: "ADS, Instagram, Telegram" }
-]
 
 export default function Home({ posts }) {
 
